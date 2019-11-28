@@ -1,0 +1,62 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <data>
+
+    <variable
+        name="itemViewModel"
+        type="com.example.task.data.viewmodel.RvItemViewModel"/>
+  </data>
+  <RelativeLayout
+      android:id="@+id/item_"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/spacing_medium"
+      android:background="?attr/selectableItemBackground"
+      android:onClick="@{itemViewModel::onItemClick}"
+      >
+      <TextView
+          android:id="@+id/label_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/spacing_small"
+          android:text="@{itemViewModel.title}"
+          android:textColor="@color/colorAccent"
+          android:textSize="@dimen/letter_large"
+          android:textStyle="bold"
+          tools:ignore="RtlCompat" />
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/label_title"
+          android:layout_marginTop="@dimen/spacing_medium"
+          android:gravity="end"
+          android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/label_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/imageView"
+            android:maxLines="3"
+            android:text="@{itemViewModel.desc}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="NotSibling,RtlCompat"
+            tools:text="gary.allen@example.com" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:src="@color/colorAccent"
+            app:imageUrl="@{itemViewModel.pictureProfile}"
+            tools:ignore="RtlCompat" />
+      </RelativeLayout>
+
+  </RelativeLayout>
+
+</layout>

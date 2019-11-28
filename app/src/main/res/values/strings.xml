@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">People-MVVM</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_github">Github</string>
+
+
+    <string name="error_loading_people">There seems to have been some error.</string>
+    <string name="default_loading_people">Press the button to load row!</string>
+    <string name="default_title">Title</string>
+    <string name="default_internet_connction">Internet connection not available.Please try again</string>
+</resources>
