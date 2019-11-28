@@ -72,6 +72,7 @@ public class MainViewModel extends Observable {
     if (InternetConnection.checkConnection(context)){
       onClickFabLoad();
     }else{
+      onReady();
       messageLabel.set(context.getString(R.string.default_internet_connction));
     }
 
@@ -108,12 +109,13 @@ public class MainViewModel extends Observable {
           @Override
           public void accept(Throwable throwable) {
             messageLabel.set(context.getString(R.string.error_loading_people));
+            onReady();
             titleLabel = new ObservableField<>(context.getString(R.string.default_title));
             peopleProgress.set(View.GONE);
             peopleLabel.set(View.VISIBLE);
             peopleRecycler.set(View.GONE);
             throwable.printStackTrace();
-            onReady();
+
           }
         });
 
