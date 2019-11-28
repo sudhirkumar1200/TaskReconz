@@ -12,7 +12,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:padding="@dimen/spacing_medium"
-      android:background="?attr/selectableItemBackground"
+
+      android:background="@drawable/gradient"
       android:onClick="@{itemViewModel::onItemClick}"
       >
       <TextView
@@ -32,6 +33,7 @@
           android:layout_below="@+id/label_title"
           android:layout_marginTop="@dimen/spacing_medium"
           android:gravity="end"
+          android:layout_toLeftOf="@+id/ivArrow"
           android:orientation="horizontal">
 
         <TextView
@@ -48,15 +50,24 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:layout_alignParentEnd="true"
             android:layout_gravity="end"
             android:src="@color/colorAccent"
             app:imageUrl="@{itemViewModel.pictureProfile}"
             tools:ignore="RtlCompat" />
       </RelativeLayout>
-
+      <ImageView
+          android:id="@+id/ivArrow"
+          android:layout_width="@dimen/arrow_height"
+          android:layout_height="@dimen/arrow_height"
+          android:layout_alignParentEnd="true"
+          android:layout_gravity="end"
+          android:rotation="180"
+          android:layout_centerVertical="true"
+          android:src="@drawable/ic_right_arrow"
+          tools:ignore="RtlCompat" />
   </RelativeLayout>
 
 </layout>
